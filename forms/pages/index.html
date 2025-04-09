@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Formulario</title>
+</head>
+<body>
+    <main>
+        <form id = "formulario" action="/enviar" method="post" autocomplete="off">
+
+            <fieldset>
+                <legend>Bebidas admitidas para tu sistema</legend>
+                <label for="bebidas">Seleccione una bebida:</label>
+                <select name="bebidas" id="bebidas" multiple size="2">
+                    <optgroup label="pretty good">
+                        <option value="agua">agua</option>
+                        <option value="cafe">café</option>
+                        <option value="pepsi" disabled>pepsi</option>
+                    </optgroup>
+                    <optgroup label="not recommended">
+                        <option value="mercurio">mercurio</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Información personal</legend>
+                <div class="campo-de-datos">
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" name="nombre" list="nombres" id="nombre" placeholder="Ingresar nombre completo">
+                    <datalist id="nombres">
+                        <option value="Daniel"></option>
+                        <option value="Hugo"></option>
+                        <option value="David"></option>
+                        <option value="Steve"></option>
+                    </datalist>
+                </div>
+
+                <div class="campo-de-datos">
+                    <label for="edad">Edad: </label>
+                    <input type="number" name="edad" id="edad" placeholder="Ingrese su edad">
+                </div>
+
+                <div class="campo-de-datos">
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" id="email" placeholder="Ingrese su correo electrónico">
+                </div>
+
+                <div class="campo-de-datos">
+                    <label for="maidenless">No maidens?: </label>
+                    <input type="checkbox" name="maidenless" id="maidenless">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Seleccione su sexo</legend>
+                <div class="campo-de-datos">
+                    <label for="masculino">Masculino: </label>
+                    <input type="radio" name="sexo" id="masculino">
+                    <label for="femenino">Femenino: </label>
+                    <input type="radio" name="sexo" id="femenino">
+                    <label for="otro">Otro: </label>
+                    <input type="radio" name="sexo" id="otro">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Mensaje</legend>
+                <textarea name="mensaje" id="mensaje" placeholder="escriba su mensaje aquí..." rows="5" cols="50"></textarea>
+            </fieldset>
+
+            <div class="botones">
+                <button type="submit">Enviar</button>
+                <button type="reset">Eliminar</button>
+            </div>
+
+        </form>
+
+        <section>
+            <button type="submit" form="formulario">Enviar desde fuera del formulario</button>
+            <button disabled id = "disabled-button">Botón desactivado</button>
+        </section>
+    </main>
+</body>
+</html>
